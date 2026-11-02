@@ -1,0 +1,30 @@
+{"id": "g01", "question": "How long is the battery warranty?", "answerable": true, "source": "warranty_claims", "key_facts": ["8 years", "80,000 km"]}
+{"id": "g02", "question": "Within how many days must a warranty claim be filed?", "answerable": true, "source": "warranty_claims", "key_facts": ["14 days"]}
+{"id": "g03", "question": "Which documents are needed to file a warranty claim?", "answerable": true, "source": "warranty_claims", "key_facts": ["invoice", "service history", "photo"]}
+{"id": "g04", "question": "Who has to approve warranty claims above ₹50,000?", "answerable": true, "source": "warranty_claims", "key_facts": ["Regional Manager"]}
+{"id": "g05", "question": "Which form does a new supplier submit to register?", "answerable": true, "source": "supplier_onboarding", "key_facts": ["SUP-01"]}
+{"id": "g06", "question": "What is the minimum credit score required for a new supplier?", "answerable": true, "source": "supplier_onboarding", "key_facts": ["650"]}
+{"id": "g07", "question": "What are the standard payment terms for suppliers?", "answerable": true, "source": "supplier_onboarding", "key_facts": ["45 days"]}
+{"id": "g08", "question": "What is the total trial order limit in a supplier's first 90 days?", "answerable": true, "source": "supplier_onboarding", "key_facts": ["5,00,000"]}
+{"id": "g09", "question": "What temperature range should battery packs be stored in?", "answerable": true, "source": "battery_safety", "key_facts": ["15", "30"]}
+{"id": "g10", "question": "How many battery packs can one storage bay hold?", "answerable": true, "source": "battery_safety", "key_facts": ["20 packs"]}
+{"id": "g11", "question": "Who must a damaged battery pack be reported to, and how quickly?", "answerable": true, "source": "battery_safety", "key_facts": ["Safety Officer", "1 hour"]}
+{"id": "g12", "question": "Who is allowed to disconnect a battery pack?", "answerable": true, "source": "battery_safety", "key_facts": ["Level 2"]}
+{"id": "g13", "question": "How big a sample is inspected from each incoming lot?", "answerable": true, "source": "quality_inspection", "key_facts": ["10%", "5 units"]}
+{"id": "g14", "question": "At what defect rate is a lot rejected?", "answerable": true, "source": "quality_inspection", "key_facts": ["2%"]}
+{"id": "g15", "question": "How quickly must a non-conformance report be raised?", "answerable": true, "source": "quality_inspection", "key_facts": ["24 hours"]}
+{"id": "g16", "question": "How long does a supplier have to respond with corrective action?", "answerable": true, "source": "quality_inspection", "key_facts": ["8D", "7 working days"]}
+{"id": "g17", "question": "How many days do customers have to return a spare part?", "answerable": true, "source": "returns_and_refunds", "key_facts": ["30 days"]}
+{"id": "g18", "question": "Is there a restocking fee, and how much is it?", "answerable": true, "source": "returns_and_refunds", "key_facts": ["10%"]}
+{"id": "g19", "question": "How long does a refund take to process?", "answerable": true, "source": "returns_and_refunds", "key_facts": ["7 working days"]}
+{"id": "g20", "question": "How quickly are defective parts replaced?", "answerable": true, "source": "returns_and_refunds", "key_facts": ["48 hours"]}
+{"id": "g21", "question": "Which form is used to report a wrong AI output, and by when?", "answerable": true, "source": "ai_usage_policy", "key_facts": ["AI-FB-01", "2 working days"]}
+{"id": "g22", "question": "Does AI output meant for customers need to be checked before sending?", "answerable": true, "source": "ai_usage_policy", "key_facts": ["reviewed by a human|human review|checked by a human"]}
+{"id": "g23", "question": "How must AI-generated content in external documents be labelled?", "answerable": true, "source": "ai_usage_policy", "key_facts": ["AI-assisted"]}
+{"id": "g24", "question": "How often is the prompt library reviewed?", "answerable": true, "source": "ai_usage_policy", "key_facts": ["every month|monthly"]}
+{"id": "g25", "question": "How many days of paid parental leave do employees get?", "answerable": false, "source": null, "key_facts": []}
+{"id": "g26", "question": "What is the price of the fast-charger accessory?", "answerable": false, "source": null, "key_facts": []}
+{"id": "g27", "question": "Which company supplies our battery cells?", "answerable": false, "source": null, "key_facts": []}
+{"id": "g28", "question": "What is the CEO's email address?", "answerable": false, "source": null, "key_facts": []}
+{"id": "g29", "question": "What is the dress code for the service centre?", "answerable": false, "source": null, "key_facts": []}
+{"id": "g30", "question": "What is the top speed of the latest scooter model?", "answerable": false, "source": null, "key_facts": []}

@@ -1,0 +1,10 @@
+description: PromptOps prompt variants on the SOP golden set
+prompts:
+- file://prompts/qa_v1.txt
+- file://prompts/qa_v2.txt
+- file://prompts/qa_v3.txt
+providers:
+- id: groq:llama-3.1-8b-instant
+  config:
+    temperature: 0
+tests: file://tests.yaml

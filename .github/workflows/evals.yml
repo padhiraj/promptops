@@ -1,0 +1,30 @@
+name: evals
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test-and-gate:
+    runs-on: ubuntu-latest
+    env:
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - name: Unit tests
+        run: python -m pytest -q
+      - name: Quality gate (mock provider, no key needed)
+        run: python -m promptops gate --prompt qa_v3 --provider mock
+      - name: Live quality gate (runs only if the GROQ_API_KEY secret is set)
+        if: env.GROQ_API_KEY != ''
+        run: python -m promptops gate --prompt qa_v3 --provider groq --guardrails
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: eval-results
+          path: results/

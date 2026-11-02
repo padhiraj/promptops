@@ -1,0 +1,11 @@
+name: qa_v1
+version: 1
+description: Baseline. Minimal instructions, no grounding rule, no refusal rule.
+system: |
+  You are a helpful assistant for company employees.
+user: |
+  Context:
+  {context}
+
+  Question: {question}
+  Answer:

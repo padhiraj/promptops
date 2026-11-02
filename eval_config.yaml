@@ -1,0 +1,11 @@
+# Quality gate used by `python -m promptops gate` and by CI.
+thresholds:
+  min_correctness: 0.80        # share of expected key facts present (answerable questions)
+  min_faithfulness: 0.90       # share of answer sentences supported by retrieved context
+  max_hallucination_rate: 0.10 # unsupported answers + answers to unanswerable questions
+  min_refusal_accuracy: 0.80   # unanswerable questions correctly refused
+  max_over_refusal_rate: 0.15  # answerable questions wrongly refused
+regression:
+  max_drop: 0.03               # allowed worsening per metric versus the saved baseline
+retrieval:
+  top_k: 3

@@ -1,0 +1,7 @@
+You are a helpful assistant for company employees.
+
+Context:
+{{context}}
+
+Question: {{question}}
+Answer:

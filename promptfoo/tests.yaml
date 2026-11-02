@@ -1,0 +1,796 @@
+- description: g01
+  vars:
+    question: How long is the battery warranty?
+    context: '[warranty_claims#1] Coverage
+
+      - Battery warranty: 8 years or 80,000 km, whichever comes first.
+
+      - Vehicle warranty: 3 years or 30,000 km, whichever comes first.
+
+      - Not covered: tyres, brake pads and bulbs, because they are wear items.
+
+
+      [warranty_claims#3] Approval
+
+      - The Warranty Desk gives a decision within 5 working days.
+
+      - Claims above ₹50,000 need approval from the Regional Manager.
+
+
+      [battery_safety#1] Storage
+
+      - Store battery packs at 15°C to 30°C with humidity of at most 70%.
+
+      - A storage bay holds a maximum of 20 packs.
+
+      - Store packs at a 40% to 60% state of charge.'
+  assert:
+  - type: icontains-any
+    value:
+    - 8 years
+  - type: icontains-any
+    value:
+    - 80,000 km
+- description: g02
+  vars:
+    question: Within how many days must a warranty claim be filed?
+    context: '[warranty_claims#2] Filing a claim
+
+      - A claim must be filed within 14 days of discovering the fault.
+
+      - Required documents: purchase invoice, service history and photos of the fault.
+
+      - Claims are filed through the dealer portal.
+
+
+      [warranty_claims#3] Approval
+
+      - The Warranty Desk gives a decision within 5 working days.
+
+      - Claims above ₹50,000 need approval from the Regional Manager.
+
+
+      [warranty_claims#1] Coverage
+
+      - Battery warranty: 8 years or 80,000 km, whichever comes first.
+
+      - Vehicle warranty: 3 years or 30,000 km, whichever comes first.
+
+      - Not covered: tyres, brake pads and bulbs, because they are wear items.'
+  assert:
+  - type: icontains-any
+    value:
+    - 14 days
+- description: g03
+  vars:
+    question: Which documents are needed to file a warranty claim?
+    context: '[warranty_claims#2] Filing a claim
+
+      - A claim must be filed within 14 days of discovering the fault.
+
+      - Required documents: purchase invoice, service history and photos of the fault.
+
+      - Claims are filed through the dealer portal.
+
+
+      [warranty_claims#3] Approval
+
+      - The Warranty Desk gives a decision within 5 working days.
+
+      - Claims above ₹50,000 need approval from the Regional Manager.
+
+
+      [warranty_claims#1] Coverage
+
+      - Battery warranty: 8 years or 80,000 km, whichever comes first.
+
+      - Vehicle warranty: 3 years or 30,000 km, whichever comes first.
+
+      - Not covered: tyres, brake pads and bulbs, because they are wear items.'
+  assert:
+  - type: icontains-any
+    value:
+    - invoice
+  - type: icontains-any
+    value:
+    - service history
+  - type: icontains-any
+    value:
+    - photo
+- description: g04
+  vars:
+    question: Who has to approve warranty claims above ₹50,000?
+    context: '[warranty_claims#3] Approval
+
+      - The Warranty Desk gives a decision within 5 working days.
+
+      - Claims above ₹50,000 need approval from the Regional Manager.
+
+
+      [warranty_claims#1] Coverage
+
+      - Battery warranty: 8 years or 80,000 km, whichever comes first.
+
+      - Vehicle warranty: 3 years or 30,000 km, whichever comes first.
+
+      - Not covered: tyres, brake pads and bulbs, because they are wear items.
+
+
+      [warranty_claims#2] Filing a claim
+
+      - A claim must be filed within 14 days of discovering the fault.
+
+      - Required documents: purchase invoice, service history and photos of the fault.
+
+      - Claims are filed through the dealer portal.'
+  assert:
+  - type: icontains-any
+    value:
+    - Regional Manager
+- description: g05
+  vars:
+    question: Which form does a new supplier submit to register?
+    context: '[supplier_onboarding#1] Registration and compliance
+
+      - New suppliers submit registration form SUP-01.
+
+      - Compliance check: a valid ISO 9001 certificate and GST registration are mandatory.
+
+      - Financial review: the supplier''s credit score must be at least 650.
+
+
+      [supplier_onboarding#3] Approval and payment
+
+      - The Procurement Head gives final approval.
+
+      - Standard payment terms are net 45 days.
+
+      - Suppliers are reviewed every quarter using a scorecard.
+
+
+      [ai_usage_policy#3] Reporting and maintenance
+
+      - Report wrong or unsafe AI outputs with form AI-FB-01 within 2 working days.
+
+      - The AI Enablement team reviews the prompt library every month.'
+  assert:
+  - type: icontains-any
+    value:
+    - SUP-01
+- description: g06
+  vars:
+    question: What is the minimum credit score required for a new supplier?
+    context: '[supplier_onboarding#1] Registration and compliance
+
+      - New suppliers submit registration form SUP-01.
+
+      - Compliance check: a valid ISO 9001 certificate and GST registration are mandatory.
+
+      - Financial review: the supplier''s credit score must be at least 650.
+
+
+      [quality_inspection#1] Sampling and acceptance
+
+      - Inspect a sample of 10% of each lot, with a minimum of 5 units.
+
+      - A lot is rejected if the defect rate is above 2%.
+
+
+      [supplier_onboarding#3] Approval and payment
+
+      - The Procurement Head gives final approval.
+
+      - Standard payment terms are net 45 days.
+
+      - Suppliers are reviewed every quarter using a scorecard.'
+  assert:
+  - type: icontains-any
+    value:
+    - '650'
+- description: g07
+  vars:
+    question: What are the standard payment terms for suppliers?
+    context: '[supplier_onboarding#3] Approval and payment
+
+      - The Procurement Head gives final approval.
+
+      - Standard payment terms are net 45 days.
+
+      - Suppliers are reviewed every quarter using a scorecard.
+
+
+      [supplier_onboarding#1] Registration and compliance
+
+      - New suppliers submit registration form SUP-01.
+
+      - Compliance check: a valid ISO 9001 certificate and GST registration are mandatory.
+
+      - Financial review: the supplier''s credit score must be at least 650.
+
+
+      [returns_and_refunds#2] Fees and refunds
+
+      - A restocking fee of 10% applies to non-defective returns.
+
+      - Refunds are processed within 7 working days to the original payment method.'
+  assert:
+  - type: icontains-any
+    value:
+    - 45 days
+- description: g08
+  vars:
+    question: What is the total trial order limit in a supplier's first 90 days?
+    context: '[supplier_onboarding#2] Audit and trial period
+
+      - A site audit is carried out within 30 days of registration approval.
+
+      - During the first 90 days, trial orders are limited to ₹5,00,000 in total.
+
+
+      [supplier_onboarding#3] Approval and payment
+
+      - The Procurement Head gives final approval.
+
+      - Standard payment terms are net 45 days.
+
+      - Suppliers are reviewed every quarter using a scorecard.
+
+
+      [warranty_claims#1] Coverage
+
+      - Battery warranty: 8 years or 80,000 km, whichever comes first.
+
+      - Vehicle warranty: 3 years or 30,000 km, whichever comes first.
+
+      - Not covered: tyres, brake pads and bulbs, because they are wear items.'
+  assert:
+  - type: icontains-any
+    value:
+    - 5,00,000
+- description: g09
+  vars:
+    question: What temperature range should battery packs be stored in?
+    context: '[battery_safety#1] Storage
+
+      - Store battery packs at 15°C to 30°C with humidity of at most 70%.
+
+      - A storage bay holds a maximum of 20 packs.
+
+      - Store packs at a 40% to 60% state of charge.
+
+
+      [battery_safety#2] Damaged packs
+
+      - Move a damaged pack to the quarantine cage immediately.
+
+      - Report the damaged pack to the Safety Officer within 1 hour.
+
+
+      [battery_safety#3] Working on packs
+
+      - Lockout-tagout must be completed before any pack is disconnected.
+
+      - Only Level 2 certified technicians may disconnect or open a pack.
+
+      - Wear insulated gloves rated for 1000 V and a face shield.
+
+      - Never bypass the safety interlock.'
+  assert:
+  - type: icontains-any
+    value:
+    - '15'
+  - type: icontains-any
+    value:
+    - '30'
+- description: g10
+  vars:
+    question: How many battery packs can one storage bay hold?
+    context: '[battery_safety#1] Storage
+
+      - Store battery packs at 15°C to 30°C with humidity of at most 70%.
+
+      - A storage bay holds a maximum of 20 packs.
+
+      - Store packs at a 40% to 60% state of charge.
+
+
+      [battery_safety#2] Damaged packs
+
+      - Move a damaged pack to the quarantine cage immediately.
+
+      - Report the damaged pack to the Safety Officer within 1 hour.
+
+
+      [battery_safety#3] Working on packs
+
+      - Lockout-tagout must be completed before any pack is disconnected.
+
+      - Only Level 2 certified technicians may disconnect or open a pack.
+
+      - Wear insulated gloves rated for 1000 V and a face shield.
+
+      - Never bypass the safety interlock.'
+  assert:
+  - type: icontains-any
+    value:
+    - 20 packs
+- description: g11
+  vars:
+    question: Who must a damaged battery pack be reported to, and how quickly?
+    context: '[battery_safety#2] Damaged packs
+
+      - Move a damaged pack to the quarantine cage immediately.
+
+      - Report the damaged pack to the Safety Officer within 1 hour.
+
+
+      [battery_safety#1] Storage
+
+      - Store battery packs at 15°C to 30°C with humidity of at most 70%.
+
+      - A storage bay holds a maximum of 20 packs.
+
+      - Store packs at a 40% to 60% state of charge.
+
+
+      [battery_safety#3] Working on packs
+
+      - Lockout-tagout must be completed before any pack is disconnected.
+
+      - Only Level 2 certified technicians may disconnect or open a pack.
+
+      - Wear insulated gloves rated for 1000 V and a face shield.
+
+      - Never bypass the safety interlock.'
+  assert:
+  - type: icontains-any
+    value:
+    - Safety Officer
+  - type: icontains-any
+    value:
+    - 1 hour
+- description: g12
+  vars:
+    question: Who is allowed to disconnect a battery pack?
+    context: '[battery_safety#3] Working on packs
+
+      - Lockout-tagout must be completed before any pack is disconnected.
+
+      - Only Level 2 certified technicians may disconnect or open a pack.
+
+      - Wear insulated gloves rated for 1000 V and a face shield.
+
+      - Never bypass the safety interlock.
+
+
+      [battery_safety#1] Storage
+
+      - Store battery packs at 15°C to 30°C with humidity of at most 70%.
+
+      - A storage bay holds a maximum of 20 packs.
+
+      - Store packs at a 40% to 60% state of charge.
+
+
+      [battery_safety#2] Damaged packs
+
+      - Move a damaged pack to the quarantine cage immediately.
+
+      - Report the damaged pack to the Safety Officer within 1 hour.'
+  assert:
+  - type: icontains-any
+    value:
+    - Level 2
+- description: g13
+  vars:
+    question: How big a sample is inspected from each incoming lot?
+    context: '[quality_inspection#1] Sampling and acceptance
+
+      - Inspect a sample of 10% of each lot, with a minimum of 5 units.
+
+      - A lot is rejected if the defect rate is above 2%.
+
+
+      [quality_inspection#3] Records and equipment
+
+      - Inspection records are kept for 5 years.
+
+      - Measuring gauges are calibrated every 6 months.
+
+
+      [quality_inspection#2] Non-conformance handling
+
+      - Raise a non-conformance report (NCR) within 24 hours of finding a defect.
+
+      - The supplier must reply with an 8D report within 7 working days.'
+  assert:
+  - type: icontains-any
+    value:
+    - 10%
+  - type: icontains-any
+    value:
+    - 5 units
+- description: g14
+  vars:
+    question: At what defect rate is a lot rejected?
+    context: '[quality_inspection#1] Sampling and acceptance
+
+      - Inspect a sample of 10% of each lot, with a minimum of 5 units.
+
+      - A lot is rejected if the defect rate is above 2%.
+
+
+      [quality_inspection#2] Non-conformance handling
+
+      - Raise a non-conformance report (NCR) within 24 hours of finding a defect.
+
+      - The supplier must reply with an 8D report within 7 working days.
+
+
+      [battery_safety#3] Working on packs
+
+      - Lockout-tagout must be completed before any pack is disconnected.
+
+      - Only Level 2 certified technicians may disconnect or open a pack.
+
+      - Wear insulated gloves rated for 1000 V and a face shield.
+
+      - Never bypass the safety interlock.'
+  assert:
+  - type: icontains-any
+    value:
+    - 2%
+- description: g15
+  vars:
+    question: How quickly must a non-conformance report be raised?
+    context: '[quality_inspection#2] Non-conformance handling
+
+      - Raise a non-conformance report (NCR) within 24 hours of finding a defect.
+
+      - The supplier must reply with an 8D report within 7 working days.
+
+
+      [ai_usage_policy#3] Reporting and maintenance
+
+      - Report wrong or unsafe AI outputs with form AI-FB-01 within 2 working days.
+
+      - The AI Enablement team reviews the prompt library every month.
+
+
+      [returns_and_refunds#2] Fees and refunds
+
+      - A restocking fee of 10% applies to non-defective returns.
+
+      - Refunds are processed within 7 working days to the original payment method.'
+  assert:
+  - type: icontains-any
+    value:
+    - 24 hours
+- description: g16
+  vars:
+    question: How long does a supplier have to respond with corrective action?
+    context: '[supplier_onboarding#1] Registration and compliance
+
+      - New suppliers submit registration form SUP-01.
+
+      - Compliance check: a valid ISO 9001 certificate and GST registration are mandatory.
+
+      - Financial review: the supplier''s credit score must be at least 650.
+
+
+      [supplier_onboarding#3] Approval and payment
+
+      - The Procurement Head gives final approval.
+
+      - Standard payment terms are net 45 days.
+
+      - Suppliers are reviewed every quarter using a scorecard.
+
+
+      [quality_inspection#2] Non-conformance handling
+
+      - Raise a non-conformance report (NCR) within 24 hours of finding a defect.
+
+      - The supplier must reply with an 8D report within 7 working days.'
+  assert:
+  - type: icontains-any
+    value:
+    - 8D
+  - type: icontains-any
+    value:
+    - 7 working days
+- description: g17
+  vars:
+    question: How many days do customers have to return a spare part?
+    context: '[returns_and_refunds#1] Eligibility
+
+      - Parts can be returned within 30 days of purchase if unused and in original
+      packaging.
+
+      - A return authorisation (RMA) number is required for every return.
+
+      - Helmets cannot be returned once used.
+
+
+      [returns_and_refunds#3] Defective parts
+
+      - Defective parts are replaced free of charge within 48 hours at the dealer.
+
+      - The company pays return shipping for defective parts.
+
+
+      [returns_and_refunds#2] Fees and refunds
+
+      - A restocking fee of 10% applies to non-defective returns.
+
+      - Refunds are processed within 7 working days to the original payment method.'
+  assert:
+  - type: icontains-any
+    value:
+    - 30 days
+- description: g18
+  vars:
+    question: Is there a restocking fee, and how much is it?
+    context: '[returns_and_refunds#2] Fees and refunds
+
+      - A restocking fee of 10% applies to non-defective returns.
+
+      - Refunds are processed within 7 working days to the original payment method.'
+  assert:
+  - type: icontains-any
+    value:
+    - 10%
+- description: g19
+  vars:
+    question: How long does a refund take to process?
+    context: '[returns_and_refunds#2] Fees and refunds
+
+      - A restocking fee of 10% applies to non-defective returns.
+
+      - Refunds are processed within 7 working days to the original payment method.
+
+
+      [returns_and_refunds#3] Defective parts
+
+      - Defective parts are replaced free of charge within 48 hours at the dealer.
+
+      - The company pays return shipping for defective parts.
+
+
+      [returns_and_refunds#1] Eligibility
+
+      - Parts can be returned within 30 days of purchase if unused and in original
+      packaging.
+
+      - A return authorisation (RMA) number is required for every return.
+
+      - Helmets cannot be returned once used.'
+  assert:
+  - type: icontains-any
+    value:
+    - 7 working days
+- description: g20
+  vars:
+    question: How quickly are defective parts replaced?
+    context: '[returns_and_refunds#3] Defective parts
+
+      - Defective parts are replaced free of charge within 48 hours at the dealer.
+
+      - The company pays return shipping for defective parts.
+
+
+      [returns_and_refunds#2] Fees and refunds
+
+      - A restocking fee of 10% applies to non-defective returns.
+
+      - Refunds are processed within 7 working days to the original payment method.
+
+
+      [returns_and_refunds#1] Eligibility
+
+      - Parts can be returned within 30 days of purchase if unused and in original
+      packaging.
+
+      - A return authorisation (RMA) number is required for every return.
+
+      - Helmets cannot be returned once used.'
+  assert:
+  - type: icontains-any
+    value:
+    - 48 hours
+- description: g21
+  vars:
+    question: Which form is used to report a wrong AI output, and by when?
+    context: '[ai_usage_policy#3] Reporting and maintenance
+
+      - Report wrong or unsafe AI outputs with form AI-FB-01 within 2 working days.
+
+      - The AI Enablement team reviews the prompt library every month.
+
+
+      [quality_inspection#2] Non-conformance handling
+
+      - Raise a non-conformance report (NCR) within 24 hours of finding a defect.
+
+      - The supplier must reply with an 8D report within 7 working days.
+
+
+      [ai_usage_policy#2] Review and labelling
+
+      - Customer-facing AI output must be reviewed by a human before it is sent.
+
+      - AI-generated content in external documents must be labelled "AI-assisted".'
+  assert:
+  - type: icontains-any
+    value:
+    - AI-FB-01
+  - type: icontains-any
+    value:
+    - 2 working days
+- description: g22
+  vars:
+    question: Does AI output meant for customers need to be checked before sending?
+    context: '[ai_usage_policy#2] Review and labelling
+
+      - Customer-facing AI output must be reviewed by a human before it is sent.
+
+      - AI-generated content in external documents must be labelled "AI-assisted".
+
+
+      [warranty_claims#3] Approval
+
+      - The Warranty Desk gives a decision within 5 working days.
+
+      - Claims above ₹50,000 need approval from the Regional Manager.
+
+
+      [supplier_onboarding#1] Registration and compliance
+
+      - New suppliers submit registration form SUP-01.
+
+      - Compliance check: a valid ISO 9001 certificate and GST registration are mandatory.
+
+      - Financial review: the supplier''s credit score must be at least 650.'
+  assert:
+  - type: icontains-any
+    value:
+    - reviewed by a human
+    - human review
+    - checked by a human
+- description: g23
+  vars:
+    question: How must AI-generated content in external documents be labelled?
+    context: '[ai_usage_policy#2] Review and labelling
+
+      - Customer-facing AI output must be reviewed by a human before it is sent.
+
+      - AI-generated content in external documents must be labelled "AI-assisted".
+
+
+      [warranty_claims#2] Filing a claim
+
+      - A claim must be filed within 14 days of discovering the fault.
+
+      - Required documents: purchase invoice, service history and photos of the fault.
+
+      - Claims are filed through the dealer portal.'
+  assert:
+  - type: icontains-any
+    value:
+    - AI-assisted
+- description: g24
+  vars:
+    question: How often is the prompt library reviewed?
+    context: '[ai_usage_policy#3] Reporting and maintenance
+
+      - Report wrong or unsafe AI outputs with form AI-FB-01 within 2 working days.
+
+      - The AI Enablement team reviews the prompt library every month.
+
+
+      [ai_usage_policy#2] Review and labelling
+
+      - Customer-facing AI output must be reviewed by a human before it is sent.
+
+      - AI-generated content in external documents must be labelled "AI-assisted".
+
+
+      [supplier_onboarding#3] Approval and payment
+
+      - The Procurement Head gives final approval.
+
+      - Standard payment terms are net 45 days.
+
+      - Suppliers are reviewed every quarter using a scorecard.'
+  assert:
+  - type: icontains-any
+    value:
+    - every month
+    - monthly
+- description: g25
+  vars:
+    question: How many days of paid parental leave do employees get?
+    context: '[supplier_onboarding#2] Audit and trial period
+
+      - A site audit is carried out within 30 days of registration approval.
+
+      - During the first 90 days, trial orders are limited to ₹5,00,000 in total.
+
+
+      [warranty_claims#3] Approval
+
+      - The Warranty Desk gives a decision within 5 working days.
+
+      - Claims above ₹50,000 need approval from the Regional Manager.
+
+
+      [ai_usage_policy#3] Reporting and maintenance
+
+      - Report wrong or unsafe AI outputs with form AI-FB-01 within 2 working days.
+
+      - The AI Enablement team reviews the prompt library every month.'
+  assert:
+  - type: icontains
+    value: I don't know based on the provided documents.
+- description: g26
+  vars:
+    question: What is the price of the fast-charger accessory?
+    context: ''
+  assert:
+  - type: icontains
+    value: I don't know based on the provided documents.
+- description: g27
+  vars:
+    question: Which company supplies our battery cells?
+    context: '[ai_usage_policy#1] Approved use
+
+      - Only the internal AI assistant may be used with company data.
+
+      - Never paste customer personal data, such as names, phone numbers or addresses,
+      into any AI tool.
+
+
+      [returns_and_refunds#3] Defective parts
+
+      - Defective parts are replaced free of charge within 48 hours at the dealer.
+
+      - The company pays return shipping for defective parts.
+
+
+      [battery_safety#1] Storage
+
+      - Store battery packs at 15°C to 30°C with humidity of at most 70%.
+
+      - A storage bay holds a maximum of 20 packs.
+
+      - Store packs at a 40% to 60% state of charge.'
+  assert:
+  - type: icontains
+    value: I don't know based on the provided documents.
+- description: g28
+  vars:
+    question: What is the CEO's email address?
+    context: ''
+  assert:
+  - type: icontains
+    value: I don't know based on the provided documents.
+- description: g29
+  vars:
+    question: What is the dress code for the service centre?
+    context: '[warranty_claims#2] Filing a claim
+
+      - A claim must be filed within 14 days of discovering the fault.
+
+      - Required documents: purchase invoice, service history and photos of the fault.
+
+      - Claims are filed through the dealer portal.'
+  assert:
+  - type: icontains
+    value: I don't know based on the provided documents.
+- description: g30
+  vars:
+    question: What is the top speed of the latest scooter model?
+    context: ''
+  assert:
+  - type: icontains
+    value: I don't know based on the provided documents.

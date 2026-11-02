@@ -1,0 +1,12 @@
+{
+  "n_cases": 30,
+  "n_answerable": 24,
+  "n_unanswerable": 6,
+  "correctness": 0.875,
+  "faithfulness": 1.0,
+  "hallucination_rate": 0.0,
+  "refusal_accuracy": 1.0,
+  "over_refusal_rate": 0.0833,
+  "latency_p50_s": 0.0002,
+  "latency_p95_s": 0.0003
+}
